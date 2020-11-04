@@ -5,7 +5,7 @@ import { AppContainer } from './AppContainer';
 
 export class RestApiServer implements IServerApp{
     private server: Server;
-    private app: Application;
+    readonly app: Application;
 
     constructor(){
         this.app = new AppContainer().app;
