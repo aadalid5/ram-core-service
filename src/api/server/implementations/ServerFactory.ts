@@ -1,8 +1,8 @@
 import { IServerApp } from '../definitions/IServerApp';
-import { ExpressServer } from './ExpressServer';
+import { RestApiServer } from './RestApiServer';
 
 export class ServerFactory{
     public static createExpressServer(): IServerApp{
-        return new ExpressServer();
+        return new RestApiServer();
     }
 }

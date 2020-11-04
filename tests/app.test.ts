@@ -1,5 +1,5 @@
-import { IServerApp } from '../src/app/api/definitions/IServerApp';
-import { ServerFactory } from '../src/app/api/implementations/ServerFactory';
+import { IServerApp } from '../src/api/server/definitions/IServerApp';
+import { ServerFactory } from '../src/api/server/implementations/ServerFactory';
 
 describe('server Factory',()=>{
     it('should create a server app', ()=>{
