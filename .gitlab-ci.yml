@@ -2,6 +2,7 @@ image: node:12-buster
 
 stages:
   - test
+  - build 
 
 validatelint:
   stage: test
@@ -9,3 +10,28 @@ validatelint:
     - yarn install
   script:
     - yarn run lint
+  tags:
+    - docker
+
+test:
+  stage: test
+  before_script:
+    - yarn install
+  script:
+    - yarn run test
+  tags:
+    - docker
+
+build:
+  stage: build
+  before_script:
+    - yarn install
+  script:
+    - yarn run build
+  artifacts:
+    paths:
+      - dist/
+      - README.md
+    expire_in: 30 days
+  tags:
+    - docker
