@@ -5,7 +5,7 @@ import { IHealthInfo } from '../../core/domain/IHealthInfo';
 @Controller()
 export class HealthController{
     @Get('/health')
-    getHealth(): IHealthInfo{
-        return ServicesFacade.HealthService.getHealth();
+    async getHealth(): Promise<IHealthInfo>{
+        return await ServicesFacade.HealthService.getHealth();
     }
 }
